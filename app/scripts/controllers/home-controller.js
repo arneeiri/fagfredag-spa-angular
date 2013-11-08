@@ -1,10 +1,4 @@
 angular.module('yrApp').controller('HomeCtrl', function ($scope, yrService, searchService) {
-    yrService.getForecast({place: 'Oslo', municipality: 'Oslo', county: 'Oslo'}).then(function(forecast) {
-        console.log(forecast);
-        $scope.forecast = forecast;
-        forecast.periods[0].selected = true;
-  });
-
     $scope.select = function(period) {
         $.each($scope.forecast.periods, function(i) {
            $scope.forecast.periods[i].selected = false;

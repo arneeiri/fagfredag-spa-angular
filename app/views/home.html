@@ -6,7 +6,7 @@
         </li>
     </ul>
 </div>
-<div class="panel panel-primary">
+<div class="panel panel-primary" ng-if='forecast'>
     <div class="panel-heading">
         <h1 class="panel-title">Været for {{forecast.place}}, {{forecast.country}}</h1>
     </div>
@@ -36,6 +36,7 @@
                 <div ng-if='!period.selected'>
                     {{period.from | date:'HH.mm'}} - {{period.to | date:'HH.mm'}}
                     <img ng-src="{{period.symbolUrl}}">
+                    {{period.temperature}}&deg;
                     {{period.description}}
                     {{period.precipitationMin}} – {{period.precipitationMax}} mm
                     {{period.windType}}, {{period.windSpeed}} fra {{period.windDirection}}
