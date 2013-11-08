@@ -1,3 +1,11 @@
+<div>
+    <input type="text" class="form-control" placeholder="Search" ng-model='q' ng-change='search(q)'>
+    <ul class='list-group'>
+        <li class='list-group-item' ng-repeat='resultItem in searchResult.results'>
+            <span ng-click='getWeather(resultItem)'>{{resultItem.name}}, {{resultItem.county}} - {{resultItem.type}}</span>
+        </li>
+    </ul>
+</div>
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h1 class="panel-title">Været for {{forecast.place}}, {{forecast.country}}</h1>
