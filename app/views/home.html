@@ -1,1 +1,39 @@
-{{message}}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h1 class="panel-title">Været for {{forecast.place}}, {{forecast.country}}</h1>
+    </div>
+    <div class="panel-body">
+
+        <ul class='list-group'>
+            <li ng-repeat='period in forecast.periods' class='list-group-item'  ng-click='select(period)'>
+                <div class="row" ng-if='period.selected'>
+                    <div class="col-sm-2 col-sm-offset-1 temperature">
+                        <span>{{period.temperature}}&deg;</span>
+                    </div>
+                    <div class="col-sm-4 weather">
+                        <img ng-src="{{period.symbolUrl}}">
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="info">
+                            <p>{{period.from | date:'HH.mm'}} - {{period.to | date:'HH.mm'}}</p>
+                            <p>{{period.description}}</p>
+                            <p>{{period.precipitationMin}} – {{period.precipitationMax}} mm</p>
+                        </div>
+                        <div class="info">
+                            <p>Vind:</p>
+                            <p>{{period.windType}}, {{period.windSpeed}} fra {{period.windDirection}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if='!period.selected'>
+                    {{period.from | date:'HH.mm'}} - {{period.to | date:'HH.mm'}}
+                    <img ng-src="{{period.symbolUrl}}">
+                    {{period.description}}
+                    {{period.precipitationMin}} – {{period.precipitationMax}} mm
+                    {{period.windType}}, {{period.windSpeed}} fra {{period.windDirection}}
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
