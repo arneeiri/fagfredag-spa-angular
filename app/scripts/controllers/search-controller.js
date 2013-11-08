@@ -6,9 +6,9 @@ angular.module('yrApp').controller('searchController', function($scope, searchSe
         });
     };
 
-    $scope.getWeatherInternal = function(location) {
+    $scope.selectLocationInternal = function(location) {
         $scope.q = '';
         $scope.searchResult = null;
-        $scope.getWeather(location);
+        $scope.selectLocation(location);
     };
 });

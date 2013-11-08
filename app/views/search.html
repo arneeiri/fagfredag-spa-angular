@@ -2,7 +2,7 @@
     <input type="text" class="form-control" placeholder="Search" ng-model='q' ng-change='search(q)'>
     <ul class='list-group'>
         <li class='list-group-item' ng-repeat='resultItem in searchResult.results'>
-            <span ng-click='getWeatherInternal(resultItem)'>{{resultItem.name}}, {{resultItem.county}} - {{resultItem.type}}</span>
+            <span ng-click='selectLocationInternal(resultItem)'>{{resultItem.name}}, {{resultItem.county}} - {{resultItem.type}}</span>
         </li>
     </ul>
 </div>

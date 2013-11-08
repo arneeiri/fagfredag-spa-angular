@@ -6,7 +6,7 @@ angular.module('yrApp').controller('HomeCtrl', function ($scope, yrService) {
         period.selected = true;
     }
 
-    $scope.getWeather = function(location) {
+    $scope.selectLocation = function(location) {
         yrService.getForecast({place: location.name, municipality: location.municipality, county: location.county}).then(function(forecast) {
             $scope.forecast = forecast;
             forecast.periods[0].selected = true;
